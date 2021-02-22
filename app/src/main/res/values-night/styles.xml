@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="Widget.Theme.DrawImg.MyView" parent="">
+        <item name="android:padding">5dp</item>
+        <item name="circleColor">@android:color/holo_red_light</item>
+        <item name="isCheck">false</item>
+        <item name="mStrokeWidth">3dp</item>
+        <item name="ringColor">@android:color/white</item>
+    </style>
+</resources>

@@ -48,7 +48,12 @@ class PreviewFragment : Fragment() {
         }
 
         v.btEditImg.setOnClickListener {
-            TODO("draw fragment implement")
+            val editFragment = EditFragment.newInstance(photoUri)
+            parentFragmentManager
+                .beginTransaction()
+                .addToBackStack("edit")
+                .replace(R.id.root, editFragment)
+                .commit()
         }
 
         return v.root

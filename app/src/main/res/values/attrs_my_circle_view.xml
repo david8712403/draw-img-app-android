@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="MyCircleView">
+        <attr name="circleColor" format="color" />
+        <attr name="isCheck" format="boolean" />
+        <attr name="mStrokeWidth" format="dimension" />
+        <attr name="ringColor" format="color" />
+    </declare-styleable>
+</resources>
