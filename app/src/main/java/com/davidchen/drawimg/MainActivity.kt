@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity(), PhotoPickerFragment.Callback {
         Timber.d(photos[0].lastPathSegment)
         val uri = photos[photos.size - 1]
         val now = Calendar.getInstance().time.toString()
-        val fileName = uri.lastPathSegment + now
+        val fileName = now + uri.lastPathSegment
         val destination = File(cacheDir, fileName)
         val options: UCrop.Options = UCrop.Options()
         options.setFreeStyleCropEnabled(true)

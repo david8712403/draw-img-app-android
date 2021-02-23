@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.davidchen.drawimg.databinding.FragmentPreviewBinding
@@ -55,6 +56,14 @@ class PreviewFragment : Fragment() {
                 .replace(R.id.root, editFragment)
                 .commit()
         }
+
+        parentFragmentManager.setFragmentResultListener(EditFragment.IMG_URI,
+                this,
+                { _, bundle ->
+                    val uri = bundle.getString(EditFragment.IMG_URI)?.toUri()
+                    uri?.let { setImage(it) }
+                }
+        )
 
         return v.root
     }
