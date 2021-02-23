@@ -94,10 +94,10 @@ class EditFragment : Fragment() {
         val contentValues = ContentValues()
         contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, name)
         contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
-            // store in /{app_name}
-            contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, relativeLocation)
-        } // or picture store in default media folder -> /Pictures
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+//            // store in /{app_name}
+//            contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, relativeLocation)
+//        } // or picture store in default media folder -> /Pictures
 
         val resolver = requireContext().contentResolver
         var stream: OutputStream? = null
