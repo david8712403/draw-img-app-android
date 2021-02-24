@@ -18,7 +18,6 @@ import com.davidchen.drawimg.databinding.FragmentEditBinding
 import timber.log.Timber
 import java.io.IOException
 import java.io.OutputStream
-import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
 

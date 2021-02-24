@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.bumptech.glide.Glide
 import com.davidchen.drawimg.databinding.FragmentPreviewBinding
 import lv.chi.photopicker.ChiliPhotoPicker
@@ -51,10 +52,11 @@ class PreviewFragment : Fragment() {
         v.btEditImg.setOnClickListener {
             val editFragment = EditFragment.newInstance(photoUri)
             parentFragmentManager
-                .beginTransaction()
-                .addToBackStack("edit")
-                .replace(R.id.root, editFragment)
-                .commit()
+                    .beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .addToBackStack("edit")
+                    .replace(R.id.root, editFragment)
+                    .commit()
         }
 
         parentFragmentManager.setFragmentResultListener(EditFragment.IMG_URI,
